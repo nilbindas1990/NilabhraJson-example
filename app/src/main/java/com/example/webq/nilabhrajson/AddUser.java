@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +25,9 @@ public class AddUser extends AppCompatActivity {
 
     EditText add_name , add_email , add_phone;
     Button add_user_btn;
+    Button firebase_btn;
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class AddUser extends AppCompatActivity {
         add_email  = findViewById(R.id.add_email);
         add_phone  = findViewById(R.id.add_phone);
         add_user_btn  = findViewById(R.id.add_user_btn);
-
+        firebase_btn = findViewById(R.id.fire_btn);
 
 
         add_user_btn.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +51,18 @@ public class AddUser extends AppCompatActivity {
                 sentAddUserData(name , email , phone);
             }
         });
+
+        //Checking Firebase event System.
+//        firebase_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Bundle bundle = new Bundle();
+//                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
+//                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+//                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+//                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+//            }
+//        });
     }
 
     @Override
