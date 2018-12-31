@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +31,8 @@ import java.util.List;
 //Author : Nilabhra Chakraboty
 public class MainActivity extends AppCompatActivity {
 
+    //private FirebaseAnalytics mFirebaseAnalytics;
+
     String url = "https://webqueuesolution.com/samples/projects/sandip/android_development/test_api/read.php";
     ListView listView;
 
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Obtain the FirebaseAnalytics instance.
+        //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         listView = findViewById(R.id.listview);
         add_button = findViewById(R.id.add_button);

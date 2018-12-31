@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "821326383067",
+    "firebase_url": "https://nilabhrajson.firebaseio.com",
+    "project_id": "nilabhrajson",
+    "storage_bucket": "nilabhrajson.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821326383067:android:4fac7feba08f4274",
+        "android_client_info": {
+          "package_name": "com.example.webq.nilabhrajson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821326383067-4en248mpbs1equnt5gracnadh4btq865.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.webq.nilabhrajson",
+            "certificate_hash": "dc8f5c7aa449d8d11275ddb3c6c7ff81cf547718"
+          }
+        },
+        {
+          "client_id": "821326383067-hqu5tqj1rn7qsd80rht2rhljj4l3he61.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv_ZcQOy7rtgrV_T0zuA-oHiAR031OugY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821326383067-hqu5tqj1rn7qsd80rht2rhljj4l3he61.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
