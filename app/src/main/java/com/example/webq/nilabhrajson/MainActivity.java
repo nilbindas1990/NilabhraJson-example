@@ -2,15 +2,12 @@ package com.example.webq.nilabhrajson;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,7 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +27,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 //Author : Nilabhra Chakraboty
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     List<MyJson> myJsonList;
 
+
     FloatingActionButton add_button;
+    FloatingActionButton add_button2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +52,16 @@ public class MainActivity extends AppCompatActivity {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
+        FirebaseInstanceId.getInstance().getToken();
+
+
         listView = findViewById(R.id.listview);
         add_button = findViewById(R.id.add_button);
+        add_button2 = findViewById(R.id.add_button2);
 
         myJsonList = new ArrayList<>();
+
 
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +70,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addIntent);
             }
         });
+
+        add_button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get token
+
+
+            }
+        });
+
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -97,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+
+                        error.printStackTrace();
 
                     }
                 }
