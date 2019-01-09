@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
         add_button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get token
-
-
+                Intent intent = new Intent(MainActivity.this,Retro.class);
+                startActivity(intent);
             }
         });
+
 
 
 
